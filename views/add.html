@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une actualité</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://as1.ftcdn.net/v2/jpg/01/58/07/18/1000_F_158071838_6ZXRyns0KQtC7Jwmi2WZd4q6uTWUwjbt.jpg'); /* Remplace 'URL_DE_TON_IMAGE' par l'URL de ton image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 90;
+}
+
+.card {
+    background-color: rgba(80, 75, 75, 0.8); /* Fond blanc semi-transparent */
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    height: 30px;
+    padding: 2px;
+    margin-bottom: 10px;
+    
+}
+
+input[type="submit"] {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #134638;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+h2 {
+    color: white; /* Couleur du titre */
+}
+
+label {
+    color: white; /* Couleur des labels */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Ajouter une actualité</h2>
+            <form action="/addnews" method="get">
+                <label for="letitre">Titre:</label><br>
+                <input type="text" id="letitre" name="letitre" re /><br><br>
+                <label for="ladescription">Description:</label><br>
+                <textarea id="ladescription" name="ladescription" required></textarea><br><br>
+                <input type="submit" value="Ajouter">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

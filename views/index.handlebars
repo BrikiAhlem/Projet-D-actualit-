@@ -1,0 +1,177 @@
+<!-- views/index.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    background-color:  #5d7785; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* styles.css */
+
+/* Footer styles */
+.footer {
+    background-image: url('https://img.freepik.com/vecteurs-libre/fond-galaxie-degrade_23-2148983655.jpg?size=626&ext=jpg&ga=GA1.1.889637445.1696418044&semt=sph');
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Redimensionne l'image pour couvrir toute la zone */
+    color: #fff;
+    padding: 40px 0;
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section ul li a:hover {
+    color: #ccc;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NewsChrono</h1>
+    </header>
+
+    <main class="card-container">
+        {{#each actualites}}
+        <div class="card">
+            <div class="card-content">
+                <h2>{{this.titre}}</h2>
+                <p>{{this.description}}</p>
+                <h4>{{this.date_publication}}</h4> 
+                 <img src="https://media.istockphoto.com/id/1397038812/video/digital-spinning-globe-animation-for-use-in-playback-videos-news-reports-loading-screens-3d.jpg?s=640x640&k=20&c=uuPbaTcITw_Dd1IT6dRXXB-7DL1hNoVecMzJy_SdMhg=" height="130" width="320" alt="Description de l'image">
+                <!-- Ajoute ici une balise img avec la source de ton image -->
+            </div>
+        </div>
+        {{/each}}
+    </main>
+
+   <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>À propos de nous</h3>
+            <p>Informations sur l'entreprise</p>
+        </div>
+        <div class="footer-section">
+            <h3>Liens utiles</h3>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Catégories</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: contact@newswebsite.com</p>
+            <p>Téléphone: +1234567890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 NewsWebsite. Tous droits réservés.</p>
+    </div>
+</footer>
+
+</body>
+</html>
