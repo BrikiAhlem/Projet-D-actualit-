@@ -39,7 +39,7 @@ function formatDate(date) {
 
 
 app.get("/", (req, res) => {
-  connection.query('SELECT * FROM actualite ORDER BY date_publication DESC', (error, results) => {
+  connection.query('SELECT * FROM actualites ORDER BY date_publication DESC', (error, results) => {
     if (error) throw error;
 
     // Formatage des dates avant de les envoyer au template
@@ -60,7 +60,7 @@ app.get("/add", (req, res) => {
 app.get("/addnews", function(req, res) {
     var untitre = req.query.letitre;
     var unedesc = req.query.ladescription;
-    var sql = "INSERT INTO actualite (titre, description) VALUES (?, ?)";
+    var sql = "INSERT INTO actualites (titre, description) VALUES (?, ?)";
     
     connection.query(sql, [untitre, unedesc], function(error, results, fields) {
         if (error) throw error;
